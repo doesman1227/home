@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>住む｜暮らし方</title>
+<meta name="description" content="いまの家を基準点にして、それを超える住環境が見つかったら住み替える。住む場所の選び方、部屋、家電と道具、整理整頓についての個人的なノート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#191715; --muted:#73706a; --faint:#a8a49c;
+    --line:#e5e2db; --card:#f3f1ec; --accent:#a06a52;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#100f0e; --ink:#efece7; --muted:#918c84; --faint:#5c5852;
+      --line:#262421; --card:#181614; --accent:#d1916f;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#100f0e; --ink:#efece7; --muted:#918c84; --faint:#5c5852;
+    --line:#262421; --card:#181614; --accent:#d1916f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;
+    font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:48rem;margin:0 auto;padding:0 16px}
+  @media (min-width:640px){.wrap{padding:0 28px}}
+
+  .top{padding:24px 0 0}
+  .back{font-size:.75rem;letter-spacing:.1em;color:var(--muted);text-decoration:none}
+  .back:hover{color:var(--ink)}
+
+  header.hero{padding:72px 0 24px}
+  .eyebrow{font-size:.7rem;letter-spacing:.24em;color:var(--accent);margin:0 0 14px}
+  h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(2rem,6vw,2.8rem);line-height:1.4;margin:0 0 6px;letter-spacing:.04em}
+  .mn-tagline{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.75;letter-spacing:.02em;margin:.1em 0 1.1em;opacity:.85}
+  .lead{color:var(--muted);margin:0;max-width:34em}
+
+  .toc{list-style:none;margin:30px 0 0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;
+    border-top:1px solid var(--line)}
+  .toc a{font-size:.8rem;color:var(--muted);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+
+  section{padding:56px 0 0}
+  .sec-n{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--faint);margin-bottom:8px}
+  h2{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1.3rem;letter-spacing:.04em;margin:0 0 6px}
+  h3{font-family:"Noto Serif JP",serif;font-weight:600;font-size:1rem;margin:28px 0 6px}
+  .pull{font-family:"Noto Serif JP",serif;font-weight:500;font-size:1.05rem;line-height:1.8;margin:.2em 0 1em;opacity:.85}
+  .note{color:var(--faint);font-size:.82rem;margin:0 0 22px}
+  p{margin:0 0 14px}
+
+  .points{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+  .points li{padding:14px 18px;background:var(--card);border-radius:3px;font-size:.95rem}
+  .points b{display:block;font-family:"Noto Serif JP",serif;font-weight:600;margin-bottom:2px}
+  .points span{color:var(--muted);font-size:.9rem}
+
+  .two{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 0 0}
+  @media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
+  .two div{padding:16px 18px;border:1px solid var(--line);border-radius:3px}
+  .two b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:8px}
+  .two ul{margin:0;padding-left:1.1em;font-size:.9rem;color:var(--muted)}
+  .two li{margin:0 0 5px}
+
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 0;font-size:.86rem;color:var(--muted)}
+  .flow span{padding:7px 13px;background:var(--card);border-radius:3px}
+  .flow i{font-style:normal;color:var(--faint)}
+  .flow .key{color:var(--ink);box-shadow:inset 0 0 0 1px var(--accent)}
+
+  .todo{margin:16px 0 0;padding:16px 18px;border:1px dashed var(--line);border-radius:3px;
+    color:var(--faint);font-size:.86rem;line-height:1.85}
+  .todo b{display:block;font-size:.66rem;letter-spacing:.2em;color:var(--accent);margin-bottom:6px;font-weight:700}
+
+  .open ul{margin:14px 0 0;padding-left:1.2em;color:var(--muted);font-size:.92rem}
+  .open li{margin:0 0 7px}
+
+  .src{display:grid;border-top:1px solid var(--line);margin-top:12px}
+  .src a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:14px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-size:.92rem}
+  .src a:hover{color:var(--accent)}
+  .src small{color:var(--faint);font-size:.76rem;letter-spacing:.06em;white-space:nowrap}
+
+  .tl{margin-top:18px;font-size:.9rem;color:var(--muted)}
+  .tl a{color:var(--accent)}
+
+  footer{margin:88px 0 0;padding:28px 0 64px;border-top:1px solid var(--line)}
+  footer p{font-size:.78rem;color:var(--faint);line-height:1.85;margin:0 0 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="back" href="../way-of-living/">← 暮らし方</a></div>
+
+  <header class="hero">
+    <p class="eyebrow">HOME</p>
+    <h1>住む</h1>
+    <p class="mn-tagline">不満があって出ていく家ではなく、もっと良い選択肢があるなら住み替える家。</p>
+    <p class="lead">暮らしのいちばん外側の器。住む場所をどう選ぶか、部屋に何を求めるか、物をどう減らすか。いまの家を基準点にして考えています。</p>
+    <ul class="toc">
+      <li><a href="#place">住まいの位置づけ</a></li>
+      <li><a href="#where">住む場所を選ぶ</a></li>
+      <li><a href="#room">部屋</a></li>
+      <li><a href="#things">家電と道具</a></li>
+      <li><a href="#order">整理整頓</a></li>
+      <li><a href="#next">これから住んでみたい場所</a></li>
+      <li><a href="#open">まだ確かめていないこと</a></li>
+      <li><a href="#src">元になったつぶやき</a></li>
+    </ul>
+  </header>
+
+  <section id="place">
+    <span class="sec-n">01 / PLACE</span>
+    <h2>住まいの位置づけ</h2>
+    <p class="pull">住む場所も、自分の美意識で選びたい。</p>
+    <p>漫画のあるキャラクターに惹かれたことがありました。和服を、決められたルールに従うのではなく、自分が本質的に美しいと思う姿として着こなしているように見えた。服装だけでなく、髪型も、住む場所も、暮らしの形も、そうやって自分が納得できるものを選びたいと思いました。</p>
+    <p>自分らしい暮らしを思い浮かべると、遊牧民のような姿が出てきます。住む場所や暮らし方を一つの形に固定せず、縛られずにいる感覚。「自由」という言葉ではうまく言えなくて、「縛られない」のほうが近い。</p>
+    <p>求めているのは、物を減らし、素敵なものだけに囲まれて暮らすこと。ただし、理想を追うこと自体が新しい窮屈さにならないようにしたい。整った部屋を保つことが義務になったら、本末転倒です。</p>
+  </section>
+
+  <section id="where">
+    <span class="sec-n">02 / WHERE</span>
+    <h2>住む場所を選ぶ</h2>
+    <p class="pull">引っ越すと先に決めない。いまより良い物件が存在するかを探す。</p>
+    <p>引っ越しを考え始めたとき、気づいたのは、いまの家が嫌なわけではないということでした。むしろ好きです。それでも気になる点はある。両方を並べてみると、何を探すべきかが見えてきました。</p>
+    <div class="two">
+      <div>
+        <b>いまの家が好きな理由</b>
+        <ul>
+          <li>ジムが近い</li>
+          <li>鳥がたくさんいる公園にすぐ行ける</li>
+          <li>通っている美容師さんと仲良くなっている</li>
+          <li>日常生活として特に困っていない</li>
+        </ul>
+      </div>
+      <div>
+        <b>それでも気になる点</b>
+        <ul>
+          <li>部屋が狭い</li>
+          <li>通勤に時間がかかる</li>
+          <li>賃貸だと資産形成につながっていないと感じる</li>
+        </ul>
+      </div>
+    </div>
+    <h3>いまの家を基準点にする</h3>
+    <p>そこで出てきた考え方が、「引っ越す」と先に決めるのではなく、「いまより良い物件が存在するか」を探してみる、というものでした。いまの家を基準点にして、それを超える住環境が見つかったら住み替える。見つからなければ住み続ける。</p>
+    <div class="flow"><span>いまの家を基準点にする</span><i>→</i><span>超える物件を探す</span><i>→</i><span class="key">見つかれば住み替え／見つからなければ住み続ける</span></div>
+    <p class="tl">こうすれば、「せっかく引っ越したのに、いまの環境のほうが良かった」という失敗を避けやすい。</p>
+    <h3>住環境と、生活の刺激は分けて考える</h3>
+    <p>引っ越したい理由のひとつに「生活に変化が欲しい」という気持ちもありました。けれどそれは、引っ越しでなくても解決できるかもしれない。週末に別の場所へ泊まりに行く、小旅行をする、行ったことのない街へ行く。<strong>住環境の改善と、生活への刺激は、分けて考えてもいい。</strong></p>
+    <p>この二つを混ぜたまま物件を探すと、住環境としては大差ないのに「変化があったから良くなった気がする」という判断をしてしまいます。刺激は <a href="../travel/">旅</a> のほうで満たせる分を、先に差し引いておく。</p>
+  </section>
+
+  <section id="room">
+    <span class="sec-n">03 / ROOM</span>
+    <h2>部屋</h2>
+    <p class="pull">シングルベッドで、いっぱいいっぱい。</p>
+    <p>いまはワンルーム。一人暮らしとしては使えているけれど、単純に狭い。シングルベッドを置くと、それでほとんど手一杯です。物があふれていて、食事をするための場所も十分に取れていません。</p>
+    <p>極端に過ごしにくいわけではありません。気になっているのは、人を招いたときに狭さが出ること、そして同じ部屋に少し飽きてきたこと。不便というより、物足りないという感覚です。</p>
+    <h3>足りていないのは、場所の役割</h3>
+    <p>広さの数字より、何のための場所が足りていないかで見ると、はっきりしています。寝る場所はベッドで埋まり、食べる場所が確保できていない。狭いというのは、面積の問題ではなく、<strong>役割を持った場所が一つしか取れていない</strong>ということでした。</p>
+    <h3>光・音・温度</h3>
+    <ul class="points">
+      <li><b>光は入れて、夜は落とす</b><span>日中は光が入ってきてほしい。夜は暗く、温かい色のほうが落ち着く。部屋全体を照らすより、手元だけを照らすほうが好み。</span></li>
+      <li><b>自然の音はよくて、生活音はだめ</b><span>鳥の声のような自然の音は歓迎。むしろ近くに公園があることを気に入っている。一方で、人の生活音や車の音は好きではない。静けさというより、音の種類を選びたい。</span></li>
+      <li><b>エアコンはできるだけ使わない</b><span>温度は機械で作るより、使わずに済む状態がいい。断熱や風の通り方は、物件を見るときの条件になる。</span></li>
+    </ul>
+    <h3>家具</h3>
+    <p>いちばん気に入っているのはシモンズのベッドです。ただシングルなので、もう少し大きいものに買い替えたい。部屋の広さを決めている最大の要素がベッドなので、ここは広さの話と切り離せません。</p>
+    <p>居心地は、自分の感覚だけで決めなくてもいいと思っています。服をパーソナルコーディネートに選んでもらっているのと同じように、住環境もインテリアの専門家に相談して整えたい。自分の美意識で選ぶことと、人に選んでもらうことは、矛盾しません。惹かれるものを人に見つけてもらって、それを自分で選び直せばいい。</p>
+    <div class="todo">
+      <b>これから書く</b>
+      何部屋あればいいのか（寝る・食べる・作業するを分けたいか）。<br>
+      いまの部屋でいちばん長くいる場所と、いちばん好きな場所。その差。
+    </div>
+  </section>
+
+  <section id="things">
+    <span class="sec-n">04 / THINGS</span>
+    <h2>家電と道具</h2>
+    <p class="pull">安いものを選ぶのではなく、自分に合って気持ちよく使えるものを選ぶ。</p>
+    <p>道具については基準のほうが先に決まっています。値段の安さで選ぶのではなく、自分に合っていて、気持ちよく使えるかどうか。良いものを少し持つほうが、生活の満足度に効きます。</p>
+    <p>いま使っていて気に入っているのは、ロジクールのマウス。手に合っていて、毎日使うものほど差が出ます。</p>
+    <p class="tl">iPhone や Mac、AIサービスのようなデジタル環境は <a href="../way-of-creating/">創り方</a> に、ウェアラブルで体の状態を見る話は <a href="../health-habits/">健康</a> に書きます。ここは住まいの中で使う道具の話です。</p>
+    <div class="todo">
+      <b>これから書く</b>
+      家電を選ぶときの基準（長く使えるか／手入れが楽か／音／見た目）。<br>
+      買ってよかったもの、失敗したもの。<br>
+      持たないことにしたもの。
+    </div>
+  </section>
+
+  <section id="order">
+    <span class="sec-n">05 / ORDER</span>
+    <h2>整理整頓</h2>
+    <p class="pull">ときめかないものは手放し、ときめくものを大切にする。</p>
+    <p>正直なところ、整理整頓の習慣はあまりありません。部屋には物があふれています。だから引っ越しより先に、片付けから始めることにしました。持ち物を整理すれば、自分に必要な広さも、住環境に求める条件も、はっきりしてくるはずです。</p>
+    <h3>三つの視点で分ける</h3>
+    <ul class="points">
+      <li><b>残すもの</b><span>楽しさ、快適さ、健康、安心感につながっているもの。</span></li>
+      <li><b>手放すもの</b><span>必要性が低く、今後も使いたいと思えないもの。</span></li>
+      <li><b>改善するもの</b><span>価値はあるけれど、いまは十分に活かせていないもの。</span></li>
+    </ul>
+    <h3>ときめきと、必要性は別のもの</h3>
+    <p>『人生がときめく片づけの魔法』をもう一度読み直すつもりです。ときめくかどうかで決めるのは分かりやすい。ただ、それだけでは足りません。健康診断のように、楽しくはないけれど必要なことがある。<strong>楽しくないからといって、機械的に切り捨てない。</strong>残すかどうかは、楽しさに加えて、健康・安心・将来への効きで判断します。</p>
+    <h3>片付けの対象は、物だけではない</h3>
+    <p>今回いちばん変わったのは、片付けを物理的な整理に限らなかったことです。部屋の物だけでなく、情報も、仕事のフォルダも、日々の習慣も、同じ視点で整理できます。必要なものを見極めて、必要のないものを減らす。やっていることは同じです。</p>
+    <div class="flow"><span>部屋の物</span><i>→</i><span>情報とフォルダ</span><i>→</i><span class="key">日々の習慣</span></div>
+    <p class="tl">続け方は <a href="../way-of-living/#habit">暮らし方</a> の四つの考え方 ― やめるより小さく置き換える、実験の感覚で試す、きっかけに結びつける、改善そのものを習慣にする ― がそのまま使えます。一度に片付けきるより、順番をつけて一つずつ。<strong>全部を同時に、やらなくてもいい。</strong></p>
+    <div class="todo">
+      <b>これから書く</b>
+      具体的に何を手放し、何を残したか。<br>
+      置き場所の決め方と、散らかったときに戻せるしくみ。<br>
+      自分でやる範囲と、片付け・掃除を専門家に頼む範囲の線引き。
+    </div>
+  </section>
+
+  <section id="next">
+    <span class="sec-n">06 / NEXT</span>
+    <h2>これから住んでみたい場所</h2>
+    <p class="note">叶ったら <a href="../joy/">これから</a> の記録へ移す。</p>
+    <p>場所は決まっていませんが、条件は四つ挙がっています。</p>
+    <ul class="points">
+      <li><b>過ごしやすいこと</b><span>役割を持った場所が複数とれて、食事もできる。</span></li>
+      <li><b>会食に行きやすいこと</b><span>人と会うのに、距離が理由にならない。</span></li>
+      <li><b>周囲に自然があること</b><span>いまの公園のように、鳥や緑がすぐ近くにある。</span></li>
+      <li><b>近くにジムがあること</b><span>いまの暮らしで続いている習慣を、途切れさせない。</span></li>
+    </ul>
+    <p>具体的な街や予算は、まだ決めていません。だから先に片付けをします。持ち物が片付けば、必要な広さが分かり、そこから探すべき物件も絞れるはずです。住む場所を一つの形に固定しない暮らし方も、いずれ試してみたい。</p>
+    <div class="todo">
+      <b>これから書く</b>
+      住んでみたい街や国。<br>
+      試してみたい住まいの形（賃貸／持ち家／二拠点／移動しながら）。<br>
+      いつ、どんな条件が揃ったら動くか。
+    </div>
+  </section>
+
+  <section id="open" class="open">
+    <span class="sec-n">07 / OPEN</span>
+    <h2>このノートで、まだ確かめていないこと</h2>
+    <ul>
+      <li>部屋の狭さは、広い部屋に移れば解決するのか、物を減らせば解決するのか</li>
+      <li>ベッドを大きくすることと、部屋を広くすることは、どちらが先か</li>
+      <li>ときめかないけれど必要なものを、どう扱うか</li>
+      <li>具体的に何を手放し、何を残すか</li>
+      <li>片付けと掃除を、どこまで自分でやり、どこから人に頼むか</li>
+      <li>引っ越し先に求める条件と、住環境にかける予算をどう決めるか（<a href="../money/">おかね</a> と重なる）</li>
+      <li>賃貸と資産形成のつり合いをどう考えるか</li>
+      <li>通勤時間と立地は、どこまでなら引き合うのか</li>
+      <li>「いまより良い物件」の良さを、何で測るのか</li>
+      <li>理想の暮らしを追うことが、新しい窮屈さになっていないか</li>
+    </ul>
+  </section>
+
+  <section id="src">
+    <span class="sec-n">08 / SOURCE</span>
+    <h2>このノートの元になったつぶやき</h2>
+    <p class="note">日々の気づきを書きとめたものから、このページをまとめています。</p>
+    <nav class="src">
+      <a href="../musings/posts/p150.html">全部を同時に、やらなくてもいい<small>2026.10.13</small></a>
+      <a href="../musings/posts/p149.html">縛られず、自分の美意識で<small>2026.10.13</small></a>
+      <a href="../musings/posts/p072.html">気に入っているけど、もっと良いなら<small>2026.08.13</small></a>
+    </nav>
+  </section>
+
+  <footer>
+    <p>専門家ではない個人が、自分の暮らしについてまとめた個人的なノートです。内容の正確性を保証するものではありません。</p>
+    <p><a class="back" href="../way-of-living/">← 暮らし方</a>　<a class="back" href="../">← m-note トップ</a></p>
+  </footer>
+</div>
+</body>
+</html>
